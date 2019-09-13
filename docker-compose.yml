@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  web:
+    build: ./web
+    command: yarn start
+    restart: always
+    ports:
+      - 3100:3000
+    volumes:
+      - ./web:/home/web
+    networks:
+      - api
+
+  api:
+    build: ./api
+    command: yarn dev
+    restart: always
+    ports:
+      - 5000:3000
+    volumes:
+      - ./api:/home/app
+    networks:
+      - shortener
+      - api
+
+  mongo:
+    image: mongo
+    restart: always
+    networks:
+      - shortener
+
+
+networks:
+  shortener:
+  api:
