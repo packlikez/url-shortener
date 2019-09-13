@@ -1,4 +1,4 @@
 api/node_modules
 api/.git
-web/.git
-web/node_modules
+frontend/.git
+frontend/node_modules

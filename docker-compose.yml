@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   web:
-    build: ./web
+    build: frontend
     command: yarn start
     restart: always
     ports:
